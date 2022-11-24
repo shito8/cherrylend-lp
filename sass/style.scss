@@ -1,0 +1,56 @@
+@use "./fontweight" as fonts;
+@use "./header" as header;
+@use "./menudrop" as menu;
+@use "./mainpage" as main;
+@use "./titles" as titles;
+@use "./maincard" as card;
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+:root {
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+/*body{
+    width: 100%;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 16.15%, #FEFEFE 28.45%), linear-gradient(44.76deg, #9BD9F2 52.34%, #FFD78A 117.16%);
+    background-size: 100% 400vh;
+    background-repeat: no-repeat;
+}*/
+
+body.dark{
+    background-color: #090B0F;
+}
+
+
+.darkMode{
+    display: none;
+}
+
+body.dark{
+    .sunMode{
+        display: none;
+    }
+    .darkMode{
+        display: inline;
+    }
+}
+
+@-webkit-keyframes change{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+    
+@keyframes change{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}

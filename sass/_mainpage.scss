@@ -1,0 +1,237 @@
+@use "./fontweight" as fonts;
+@use "./header" as header;
+
+$height-std: calc(100vh - header.$height-std);
+
+
+$font-h2-min: 2.25rem;
+$font-h2-std: 3.5rem;
+$font-h2-hd: 4.25rem;
+
+$font-h1-min: 1.25rem;
+$font-h1-std: 1.5rem;
+$font-h1-hd: 1.75rem;
+
+$font-btn-min: 1rem;
+$font-btn-std: 1.125rem;
+$font-btn-hd: 1.25rem;
+
+$width-btn-min: $font-btn-min*12.3;
+$height-btn-min: $font-btn-min*2.2;
+$box-shadow-light-min: 0px 0px $font-btn-min*.25 0px rgba(0, 0, 0, 0.25);
+$box-shadow-dark-min: 0px 0px $font-btn-min*.25 0px rgba(255, 255, 255, 0.25);
+$border-btn-min: $font-btn-min*.6;
+
+$width-btn-std: $font-btn-std*12.3;
+$height-btn-std: $font-btn-std*2.2;
+$box-shadow-light-std: 0px 0px $font-btn-std*.25 0px rgba(0, 0, 0, 0.25);
+$box-shadow-dark-std: 0px 0px $font-btn-std*.25 0px rgba(255, 255, 255, 0.25);
+$border-btn-std: $font-btn-std*.6;
+
+$width-btn-hd: $font-btn-hd*12.3;
+$height-btn-hd: $font-btn-hd*2.2;
+$box-shadow-light-hd: 0px 0px $font-btn-hd*.25 0px rgba(0, 0, 0, 0.25);
+$box-shadow-dark-hd: 0px 0px $font-btn-hd*.25 0px rgba(255, 255, 255, 0.25);
+$border-btn-hd: $font-btn-hd*.6;
+
+
+$width-img-main-std: 190px;
+$width-img-main-hd: 285px;
+
+
+$transition: 0.25s;
+
+$primary-color: #000000;
+$secundary-color: #ffffff;
+$dark-color: #090B0F;
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 10%;
+    min-height: $height-std;
+    @media (min-width: 2000px) and (orientation: landscape){
+        width: 1600px;
+    }
+
+    .articleLeft {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 70%;
+        @media (max-width: 1023px) and (orientation: landscape){
+            width: 100%;
+        }
+        @media (max-width: 1044px) and (orientation: portrait) {
+            width: 100%;
+        }
+        
+        .articleLeft div {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        h2{
+            /*background: linear-gradient(90deg, #F9BFD8 0%, #5932C9 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size:400% 400%;*/
+            font-weight: fonts.$font-weight-extrabold;
+            -webkit-animation:change 4s ease infinite;
+            animation:change 4s ease infinite;
+            font-size: $font-h2-std;
+            line-height: $font-h2-std*1.2;
+            padding: $font-h2-std*.3 0px; 
+            @media (min-width: 1640px) and (orientation: landscape){
+                font-size: $font-h2-hd;
+                line-height: $font-h2-hd*1.2;
+                padding: $font-h2-hd*.3 0px; 
+            }
+            @media (max-width: 1023px) and (orientation: landscape) and (max-height: 600px){
+                font-size: $font-h2-min;
+                line-height: $font-h2-min*1.2;
+                padding: $font-h2-min*.3 0px;
+            }
+            @media (max-width: 1044px) and (orientation: portrait){
+                text-align: center;
+            }
+            @media (max-width: 600px) and (orientation: portrait){
+                font-size: $font-h2-min;
+                line-height: $font-h2-min*1.2;
+                padding: $font-h2-min*.3 0px;
+            }
+        }
+        h1{
+            /*color: $primary-color;*/
+            font-weight: fonts.$font-weight-bold;
+            font-size: $font-h1-std;
+            margin-bottom: $font-h1-std;
+            @media (min-width: 1640px) and (orientation: landscape){
+                font-size: $font-h1-hd;
+                margin-bottom: $font-h1-hd;
+            }
+            @media (max-width: 1023px) and (orientation: landscape) and (max-height: 600px){
+                font-size: $font-h1-min;
+                margin-bottom: $font-h1-min;
+            }
+            @media (max-width: 1044px) and (orientation: portrait){
+                text-align: center;
+            }
+            @media (max-width: 600px) and (orientation: portrait){
+                font-size: $font-h1-min;
+                margin-bottom: $font-h1-min;
+            }
+            
+        }
+        .buttons{
+            display: flex;
+            flex-wrap: nowrap;
+            flex-direction: row;
+            gap: $font-btn-std;
+            @media (min-width: 1640px) and (orientation: landscape){
+                gap: $font-btn-hd;
+            }
+            @media (max-width: 1023px) and (orientation: landscape) and (max-height: 600px){
+                gap: $font-btn-min;
+                margin-bottom: $font-btn-min*2;
+            }
+            @media (max-width: 1044px) and (orientation: portrait){
+                justify-content: center;
+                align-items: center;
+            }
+            @media (max-width: 600px) and (orientation: portrait){
+                flex-direction: column;
+                gap: $font-btn-min;
+            }
+
+            .button{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: $primary-color;
+                /*background: linear-gradient(90deg, #EAA6AB 0%, #9BB4F3 100%, #D9D9D9 100%);*/
+                font-weight: fonts.$font-weight-bold;
+                border: none;
+                transition: $transition;
+                font-size: $font-btn-std;
+                border-radius: $border-btn-std;
+                width: $width-btn-std;
+                height: $height-btn-std;
+                box-shadow: $box-shadow-light-std;
+                &:hover{
+                    cursor: pointer;
+                    scale: 1.1;
+                }
+                @media (min-width: 1640px) and (orientation: landscape){
+                    font-size: $font-btn-hd;
+                    border-radius: $border-btn-hd;
+                    width: $width-btn-hd;
+                    height: $height-btn-hd;
+                    box-shadow: $box-shadow-light-hd;
+                }
+                @media (max-width: 1023px) and (orientation: landscape) and (max-height: 600px){
+                    font-size: $font-btn-min;
+                    border-radius: $border-btn-min;
+                    width: $width-btn-min;
+                    height: $height-btn-min;
+                    box-shadow: $box-shadow-light-min;
+                }
+                @media (max-width: 600px) and (orientation: portrait){
+                    font-size: $font-btn-min;
+                    border-radius: $border-btn-min;
+                    width: $width-btn-min;
+                    height: $height-btn-min;
+                    box-shadow: $box-shadow-light-min;
+                }
+            }
+        }        
+    }
+    .articleRight {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        @media (max-width: 1023px) and (orientation: landscape){
+            display: none; 
+        }
+        @media (max-width: 1044px) and (orientation: portrait){
+            display: none; 
+        }
+        img {
+           width: $width-img-main-std;
+           margin-bottom: $font-h1-std;
+           @media (min-width: 1640px) and (orientation: landscape){
+                width: $width-img-main-hd;
+                margin-bottom: $font-h1-hd;
+                
+            }
+
+        }        
+    }
+}
+
+body.dark{
+    .articleLeft h2 {
+        background: linear-gradient(90deg, #F9BFD8 0%, #5932C9 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-size:400% 400%;
+    }
+    .articleLeft h1{
+        background: linear-gradient(180deg, #FFFFFF 0%, #C2CAD1 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .buttons{
+        .button{
+            background: linear-gradient(90deg, #EAA6AB 0%, #9BB4F3 100%, #D9D9D9 100%);
+            box-shadow: $box-shadow-dark-std;
+            @media (min-width: 1640px) and (orientation: landscape){
+                box-shadow: $box-shadow-dark-hd;
+            }
+        }
+    }
+}
