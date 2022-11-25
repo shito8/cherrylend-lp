@@ -202,9 +202,11 @@ main {
         }
         img {
            width: $width-img-main-std;
+           height: $width-img-main-std*1.07;
            margin-bottom: $font-h1-std;
            @media (min-width: 1640px) and (orientation: landscape){
                 width: $width-img-main-hd;
+                height: $width-img-main-hd*1.07;
                 margin-bottom: $font-h1-hd;
                 
             }

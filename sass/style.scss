@@ -4,6 +4,10 @@
 @use "./mainpage" as main;
 @use "./titles" as titles;
 @use "./maincard" as card;
+@use "./cases" as cases;
+@use "./cardAssets" as client;
+@use "./cardSocial" as social;
+@use "./footer" as footer;
 
 
 *{
@@ -18,12 +22,12 @@
     font-family: 'Nunito Sans', sans-serif;
 }
 
-/*body{
+body{
     width: 100%;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 16.15%, #FEFEFE 28.45%), linear-gradient(44.76deg, #9BD9F2 52.34%, #FFD78A 117.16%);
-    background-size: 100% 400vh;
-    background-repeat: no-repeat;
-}*/
+    //background: linear-gradient(180deg, rgba(255, 255, 255, 0) 16.15%, #FEFEFE 28.45%), linear-gradient(44.76deg, #9BD9F2 52.34%, #FFD78A 117.16%);
+    //background-size: 100% 400vh;
+    //background-repeat: no-repeat;
+}
 
 body.dark{
     background-color: #090B0F;

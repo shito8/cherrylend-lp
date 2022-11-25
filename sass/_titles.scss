@@ -59,7 +59,6 @@ $color-light: #787D80;
     p{
         @include titlep();
     }
-    padding: 0 5%;
     margin-bottom: $font-p-std*2;
     display: flex;
     flex-direction: column;
@@ -78,6 +77,33 @@ $color-light: #787D80;
     p{
         @include titlep();
     }
+        align-self: flex-start;
+        margin-bottom: $font-p-std*2;
+    @media (min-width: 1640px) and (orientation: landscape){
+        margin-bottom: $font-p-hd*2;
+    }
+}
+
+.assets{
+    .title{
+        align-items: flex-start;
+        margin: 0 calc((100vw - 1100px)/2);
+        margin-bottom: $font-p-std*2;
+        @media (min-width: 1640px) and (orientation: landscape){
+        margin: 0 calc((100vw - 1300px)/2);
+        margin-bottom: $font-p-hd*2;    
+        }
+        @media (max-width: 1250px) and (orientation: landscape){
+        margin: 0 calc((100vw - 900px)/2);
+        margin-bottom: $font-p-std*2;  
+        }
+        h2{
+            @include titleh();
+        }
+        p{
+            @include titlep();
+        }
+    }
 }
 
 .social{
@@ -87,22 +113,10 @@ $color-light: #787D80;
     p{
         @include titlep();
     }
-
-
-}
-
-.clients{
-    h2{
-        @include titleh();
-    }
-    p{
-        @include titlep();
-    }
-
 }
 
 body.dark{
-    .title{
+    .title, .titleCases, .social, .clients{
         h2{
             background: linear-gradient(90deg, #FF76A8 0%, #4B2EFF 100%);
             -webkit-background-clip: text;
@@ -111,22 +125,6 @@ body.dark{
         }
     }
 
-    .social{
-        h2{
-            background: linear-gradient(90deg, #FF76A8 0%, #4B2EFF 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-size:400% 400%;
-        }
-    }
-    .clients{
-        h2{
-            background: linear-gradient(90deg, #FF76A8 0%, #4B2EFF 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-size:400% 400%;
-        }
-    }
 }
 
 
