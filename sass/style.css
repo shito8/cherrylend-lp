@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&display=swap");
+.main {
+  height: 100vh;
+}
 @media (min-width: 2000px) and (orientation: landscape) {
   .main {
     display: flex;
@@ -372,11 +375,17 @@ body.dark .buttons .button {
 }
 
 .title {
+  margin: 0 10vw;
   margin-bottom: 2.25rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+}
+@media (min-width: 1640px) and (orientation: landscape) {
+  .title {
+    margin-bottom: 3rem;
+  }
 }
 .title h2 {
   /*background: linear-gradient(270deg, #9BD9F2 15.33%, #F0A5A4 101.88%);
@@ -429,16 +438,7 @@ body.dark .buttons .button {
     padding-bottom: 0.5625rem;
   }
 }
-@media (min-width: 1640px) and (orientation: landscape) {
-  .title {
-    margin-bottom: 3rem;
-  }
-}
 
-.titleCases {
-  align-self: flex-start;
-  margin-bottom: 2.25rem;
-}
 .titleCases h2 {
   /*background: linear-gradient(270deg, #9BD9F2 15.33%, #F0A5A4 101.88%);
   -webkit-background-clip: text;
@@ -468,10 +468,17 @@ body.dark .buttons .button {
     padding-bottom: 0.875rem;
   }
 }
+@media (max-width: 600px) and (orientation: portrait) {
+  .titleCases h2 {
+    text-align: center;
+  }
+}
 .titleCases p {
   font-size: 1.125rem;
   font-weight: 700;
   color: #787D80;
+  align-self: flex-start;
+  margin-bottom: 2.25rem;
 }
 @media (min-width: 1640px) and (orientation: landscape) {
   .titleCases p {
@@ -491,14 +498,19 @@ body.dark .buttons .button {
   }
 }
 @media (min-width: 1640px) and (orientation: landscape) {
-  .titleCases {
+  .titleCases p {
     margin-bottom: 3rem;
+  }
+}
+@media (max-width: 600px) and (orientation: portrait) {
+  .titleCases p {
+    text-align: center;
   }
 }
 
 .assets .title {
   align-items: flex-start;
-  margin: 0 calc((100vw - 1100px) / 2);
+  margin: 0 10vw;
   margin-bottom: 2.25rem;
 }
 @media (min-width: 1640px) and (orientation: landscape) {
@@ -507,10 +519,9 @@ body.dark .buttons .button {
     margin-bottom: 3rem;
   }
 }
-@media (max-width: 1250px) and (orientation: landscape) {
+@media (max-width: 600px) and (orientation: portrait) {
   .assets .title {
-    margin: 0 calc((100vw - 900px) / 2);
-    margin-bottom: 2.25rem;
+    align-items: center;
   }
 }
 .assets .title h2 {
@@ -546,6 +557,7 @@ body.dark .buttons .button {
   font-size: 1.125rem;
   font-weight: 700;
   color: #787D80;
+  text-align: start;
 }
 @media (min-width: 1640px) and (orientation: landscape) {
   .assets .title p {
@@ -562,6 +574,11 @@ body.dark .buttons .button {
   .assets .title p {
     font-size: 1.125rem;
     padding-bottom: 0.5625rem;
+  }
+}
+@media (max-width: 600px) and (orientation: portrait) {
+  .assets .title p {
+    text-align: center;
   }
 }
 
@@ -778,17 +795,17 @@ body.dark .card p {
 .groupCases {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin: 0 calc((100vw - 1100px) / 2);
+  align-items: flex-start;
+  margin: 0 10vw;
 }
 @media (min-width: 1640px) and (orientation: landscape) {
   .groupCases {
     margin: 0 calc((100vw - 1300px) / 2);
   }
 }
-@media (max-width: 1250px) and (orientation: landscape) {
+@media (max-width: 600px) and (orientation: portrait) {
   .groupCases {
-    margin: 0 calc((100vw - 900px) / 2);
+    align-items: center;
   }
 }
 .groupCases .gCases {
@@ -814,7 +831,7 @@ body.dark .card p {
 .groupCases .gCases .cCases {
   display: flex;
   background-color: #141B22;
-  width: 1100px;
+  width: 80vw;
   height: 220px;
   border-radius: 19.8px;
   transition: 0.25s;
@@ -826,15 +843,31 @@ body.dark .card p {
     width: 1300px;
   }
 }
-@media (max-width: 1250px) and (orientation: landscape) {
+@media (max-width: 600px) and (orientation: landscape) {
   .groupCases .gCases .cCases {
-    width: 900px;
+    flex-direction: column;
+    padding: 1.5rem 0;
+    height: auto;
+  }
+}
+@media (max-width: 600px) and (orientation: portrait) {
+  .groupCases .gCases .cCases {
+    flex-direction: column;
+    padding: 1.5rem 0;
+    height: auto;
   }
 }
 .groupCases .gCases .cCases img {
   width: 110px;
   height: 117.7px;
   margin: 0 5%;
+}
+@media (max-width: 1023px) and (orientation: landscape) {
+  .groupCases .gCases .cCases img {
+    width: 88px;
+    height: 94.16px;
+    margin: 0 4%;
+  }
 }
 .groupCases .gCases .cCases h2 {
   width: 30%;
@@ -863,9 +896,26 @@ body.dark .card p {
     font-size: 1.75rem;
   }
 }
+@media (max-width: 1023px) and (orientation: landscape) {
+  .groupCases .gCases .cCases h2 {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 600px) and (orientation: landscape) {
+  .groupCases .gCases .cCases h2 {
+    width: 100%;
+    margin: 1.5rem 0;
+  }
+}
+@media (max-width: 600px) and (orientation: portrait) {
+  .groupCases .gCases .cCases h2 {
+    width: 100%;
+    margin: 1.5rem 0;
+  }
+}
 .groupCases .gCases .cCases p {
   color: #ffffff;
-  width: 50%;
+  width: 60%;
   padding: 0 5%;
   font-size: 1rem;
   font-weight: 600;
@@ -873,6 +923,23 @@ body.dark .card p {
 @media (min-width: 1640px) and (orientation: landscape) {
   .groupCases .gCases .cCases p {
     font-size: 1.25rem;
+  }
+}
+@media (max-width: 1023px) and (orientation: landscape) {
+  .groupCases .gCases .cCases p {
+    font-size: 0.875rem;
+  }
+}
+@media (max-width: 600px) and (orientation: landscape) {
+  .groupCases .gCases .cCases p {
+    width: 100%;
+    text-align: center;
+  }
+}
+@media (max-width: 600px) and (orientation: portrait) {
+  .groupCases .gCases .cCases p {
+    width: 100%;
+    text-align: center;
   }
 }
 .groupCases .gCases .cCases:hover {
@@ -889,7 +956,7 @@ body.dark .card p {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  margin: 0 calc((100vw - 1100px) / 2);
+  margin: 0 20vw;
   margin-bottom: 130px;
 }
 @media (min-width: 1640px) and (orientation: landscape) {
@@ -905,9 +972,10 @@ body.dark .card p {
     margin-bottom: 130px;
   }
 }
-@media (max-width: 1250px) and (orientation: landscape) {
+@media (max-width: 1200px) and (orientation: landscape) {
   .groupAssets {
-    margin: 0 calc((100vw - 800px) / 2);
+    max-width: 1000px;
+    margin: 0 15vw;
     gap: 52px;
     margin-bottom: 104px;
   }
@@ -920,13 +988,8 @@ body.dark .card p {
 }
 @media (max-width: 1200px) and (orientation: portrait) {
   .groupAssets {
-    gap: 52px;
-    margin-bottom: 104px;
-  }
-}
-@media (max-width: 600px) and (orientation: portrait) {
-  .groupAssets {
-    gap: 52px;
+    gap: 26px;
+    margin: 0 5%;
     margin-bottom: 104px;
   }
 }

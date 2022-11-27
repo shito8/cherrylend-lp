@@ -53,12 +53,7 @@ $font-p-hd: 1.5rem;
 $color-light: #787D80;
 
 .title{
-    h2{
-        @include titleh();
-    }
-    p{
-        @include titlep();
-    }
+    margin: 0 10vw;
     margin-bottom: $font-p-std*2;
     display: flex;
     flex-direction: column;
@@ -67,41 +62,56 @@ $color-light: #787D80;
     @media (min-width: 1640px) and (orientation: landscape){
         margin-bottom: $font-p-hd*2;
     }
-    
-}
-
-.titleCases{
     h2{
         @include titleh();
     }
     p{
         @include titlep();
     }
-        align-self: flex-start;
-        margin-bottom: $font-p-std*2;
-    @media (min-width: 1640px) and (orientation: landscape){
-        margin-bottom: $font-p-hd*2;
+    
+}
+
+.titleCases{
+    h2{
+        @include titleh();
+        @media (max-width: 600px) and (orientation: portrait){
+            text-align: center;
+        }
+    }
+    p{
+        @include titlep();
+            align-self: flex-start;
+            margin-bottom: $font-p-std*2;
+        @media (min-width: 1640px) and (orientation: landscape){
+            margin-bottom: $font-p-hd*2;
+        }
+        @media (max-width: 600px) and (orientation: portrait){
+            text-align: center;
+        }
     }
 }
 
 .assets{
     .title{
         align-items: flex-start;
-        margin: 0 calc((100vw - 1100px)/2);
+        margin: 0 10vw;
         margin-bottom: $font-p-std*2;
         @media (min-width: 1640px) and (orientation: landscape){
         margin: 0 calc((100vw - 1300px)/2);
         margin-bottom: $font-p-hd*2;    
         }
-        @media (max-width: 1250px) and (orientation: landscape){
-        margin: 0 calc((100vw - 900px)/2);
-        margin-bottom: $font-p-std*2;  
+        @media (max-width: 600px) and (orientation: portrait){
+            align-items: center;
         }
         h2{
             @include titleh();
         }
         p{
             @include titlep();
+                text-align: start;
+            @media (max-width: 600px) and (orientation: portrait){
+                text-align: center;
+            }
         }
     }
 }

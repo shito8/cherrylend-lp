@@ -18,14 +18,17 @@ $border-card-min: $width-card-min*0.018;
 $gap-min: $height-card-min*.2;
 $box-shadow-min: 0px 0px $width-card-min*.15 rgba(0, 0, 0, 0.25);
 
+
 $image-std: $height-card-std*.5;
 $image-hd: $height-card-hd*.5;
 
 $font-pmin-std: 1rem;
 $font-pmin-hd: 1.25rem;
+$font-pmin-mobile: .875rem;
 
 $font-h2-std: 1.75rem;
 $font-h2-hd: 2.125rem;
+$font-h2-mobile: 1.5rem;
 
 $primary-color: #000000;
 $secundary-color: #ffffff;
@@ -36,13 +39,13 @@ $transition: 0.25s;
 .groupCases {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin: 0 calc((100vw - 1100px)/2);
+    align-items: flex-start;
+    margin: 0 10vw;
     @media (min-width: 1640px) and (orientation: landscape){
     margin: 0 calc((100vw - 1300px)/2);    
     }
-    @media (max-width: 1250px) and (orientation: landscape){
-    margin: 0 calc((100vw - 900px)/2);  
+    @media (max-width: 600px) and (orientation: portrait){
+        align-items: center;
     }
 
     .gCases{
@@ -60,10 +63,11 @@ $transition: 0.25s;
             gap: $gap-min;
             margin-bottom: $gap-min*2;
         }
+
         .cCases{
             display: flex;
             background-color: $dark-color;
-            width: $width-card-std;
+            width: 80vw;
             height: $height-card-std;
             border-radius: $border-card-std;
             transition: $transition;
@@ -72,13 +76,26 @@ $transition: 0.25s;
             @media (min-width: 1640px) and (orientation: landscape){
                 width: $width-card-hd;
             }
-            @media (max-width: 1250px) and (orientation: landscape){
-                width: $width-card-min;
+            @media (max-width: 600px) and (orientation: landscape){
+                flex-direction: column;
+                padding: $font-h2-mobile 0;
+                height: auto;
             }
+            @media (max-width: 600px) and (orientation: portrait){
+                flex-direction: column;
+                padding: $font-h2-mobile 0;
+                height: auto;
+            }
+
             img{
                 width: $image-std;
                 height: $image-std*1.07;
                 margin: 0 5%;
+                @media (max-width: 1023px) and (orientation: landscape){
+                    width: $image-std*.8;
+                    height: $image-std*.856; 
+                    margin: 0 4%;
+                }
             }
             h2{
                 width: 30%;
@@ -100,15 +117,37 @@ $transition: 0.25s;
                 @media (max-width: 1200px) and (orientation: portrait) {
                     font-size: $font-h2-std;
                 }
+                @media (max-width: 1023px) and (orientation: landscape){
+                    font-size: $font-h2-mobile;
+                }
+                @media (max-width: 600px) and (orientation: landscape){
+                    width: 100%;
+                    margin: $font-h2-mobile 0;
+                }
+                @media (max-width: 600px) and (orientation: portrait){
+                    width: 100%;
+                    margin: $font-h2-mobile 0;
+                }
             }
             p{
                 color: $secundary-color;
-                width: 50%;
+                width: 60%;
                 padding: 0 5%;
                 font-size: $font-pmin-std;
                 font-weight: fonts.$font-weight-semibold;
                 @media (min-width: 1640px) and (orientation: landscape){
                     font-size: $font-pmin-hd;
+                }
+                @media (max-width: 1023px) and (orientation: landscape){
+                    font-size: $font-pmin-mobile;
+                }
+                @media (max-width: 600px) and (orientation: landscape){
+                    width: 100%;
+                    text-align: center;
+                }
+                @media (max-width: 600px) and (orientation: portrait){
+                    width: 100%;
+                    text-align: center;
                 }
             }
             &:hover{

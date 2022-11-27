@@ -36,7 +36,7 @@ $dark-color: #141B22;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    margin: 0 calc((100vw - 1100px)/2);
+    margin: 0 20vw;
     margin-bottom: $gap-std*2;
     @media (min-width: 1640px) and (orientation: landscape){
         gap: $gap-hd;
@@ -47,8 +47,9 @@ $dark-color: #141B22;
         gap: $gap-std;
         margin-bottom: $gap-std*2;
     }
-    @media (max-width: 1250px) and (orientation: landscape){
-        margin: 0 calc((100vw - 800px)/2); 
+    @media (max-width: 1200px) and (orientation: landscape){
+        max-width: 1000px;
+        margin: 0 15vw;
         gap: $gap-min;
         margin-bottom: $gap-min*2;
     }
@@ -57,13 +58,11 @@ $dark-color: #141B22;
         margin-bottom: $gap-min*2;
     }
     @media (max-width: 1200px) and (orientation: portrait) {
-        gap: $gap-min;
+        gap: $gap-min*.5;
+        margin: 0 5%;
         margin-bottom: $gap-min*2;
     }
-    @media (max-width: 600px) and (orientation: portrait){
-        gap: $gap-min;
-        margin-bottom: $gap-min*2;
-    }
+
 
     .cardAsset{
         display: flex;
@@ -92,6 +91,7 @@ $dark-color: #141B22;
             height: $height-card-min;
             box-shadow: $box-shadow-min;
         }
+
         @media (max-width: 600px) and (orientation: landscape){
             border-radius: $border-card-min;
             width: $width-card-min;
