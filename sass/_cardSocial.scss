@@ -35,6 +35,7 @@ $discord: #7289DA;
 $telegram: #0088CC;
 $medium-light: $primary-color;
 $medium-dark: $secundary-color;
+$dark-color: #090B0F;
 
 .social {
     display: flex;
@@ -75,7 +76,7 @@ $medium-dark: $secundary-color;
         flex-direction: column;
         padding: $font-h3-std $font-h3-std;
         transition: $transition;
-        background-color: $secundary-color;
+        background-color: $dark-color;
         &:first-child{
             color: $twitter;
             p{

@@ -1,23 +1,28 @@
 @use "./fontweight" as fonts;
+$color-light: #787D80;
+$color-lighter: #DEDEDE;
 
 @mixin titleh {
     /*background: linear-gradient(270deg, #9BD9F2 15.33%, #F0A5A4 101.88%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;*/
-    font-weight: fonts.$font-weight-extrabold;
-    background-size:400% 400%;
+    background-size: 400% 400%;
     font-size: $font-h2-std;
     padding-bottom: $font-h2-std*.5;
-    -webkit-animation:change 4s ease infinite;
-    animation:change 4s ease infinite;
-    @media (min-width: 1640px) and (orientation: landscape){
+    -webkit-animation: change 4s ease infinite;
+    animation: change 4s ease infinite;
+    font-weight: fonts.$font-weight-bold;
+
+    @media (min-width: 1640px) and (orientation: landscape) {
         font-size: $font-h2-hd;
         padding-bottom: $font-h2-hd*.5;
     }
-    @media (max-width: 1639px) and (orientation: landscape){
+
+    @media (max-width: 1639px) and (orientation: landscape) {
         font-size: $font-h2-std;
         padding-bottom: $font-h2-std*.5;
     }
+
     @media (max-width: 1200px) and (orientation: portrait) {
         font-size: $font-h2-std;
         padding-bottom: $font-h2-std*.5;
@@ -27,15 +32,19 @@
 
 @mixin titlep {
     font-size: $font-p-std;
-    font-weight: fonts.$font-weight-bold;
-    color: $color-light;
-    @media (min-width: 1640px) and (orientation: landscape){
+    font-weight: fonts.$font-weight-regular;
+    max-width: 530px;
+    color: $color-lighter;
+
+    @media (min-width: 1640px) and (orientation: landscape) {
         font-size: $font-p-hd;
     }
-    @media (max-width: 1639px) and (orientation: landscape){
+
+    @media (max-width: 1639px) and (orientation: landscape) {
         font-size: $font-p-std;
         padding-bottom: $font-p-std*.5;
     }
+
     @media (max-width: 1200px) and (orientation: portrait) {
         font-size: $font-p-std;
         padding-bottom: $font-p-std*.5;
@@ -50,91 +59,103 @@ $font-p-std: 1.125rem;
 $font-p-hd: 1.5rem;
 
 
-$color-light: #787D80;
 
-.title{
+.title {
     margin: 0 10vw;
     margin-bottom: $font-p-std*2;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    @media (min-width: 1640px) and (orientation: landscape){
+
+    @media (min-width: 1640px) and (orientation: landscape) {
         margin-bottom: $font-p-hd*2;
     }
-    h2{
+
+    h2 {
         @include titleh();
     }
-    p{
+
+    p {
         @include titlep();
     }
-    
+
 }
 
-.titleCases{
-    h2{
+.titleCases {
+    h2 {
         @include titleh();
-        @media (max-width: 600px) and (orientation: portrait){
+
+        @media (max-width: 600px) and (orientation: portrait) {
             text-align: center;
         }
     }
-    p{
+
+    p {
         @include titlep();
-            align-self: flex-start;
-            margin-bottom: $font-p-std*2;
-        @media (min-width: 1640px) and (orientation: landscape){
+        align-self: flex-start;
+        margin-bottom: $font-p-std*2;
+
+        @media (min-width: 1640px) and (orientation: landscape) {
             margin-bottom: $font-p-hd*2;
         }
-        @media (max-width: 600px) and (orientation: portrait){
+
+        @media (max-width: 600px) and (orientation: portrait) {
             text-align: center;
         }
     }
 }
 
-.assets{
-    .title{
-        align-items: flex-start;
+.assets {
+    .title {
         margin: 0 10vw;
         margin-bottom: $font-p-std*2;
-        @media (min-width: 1640px) and (orientation: landscape){
-        margin: 0 calc((100vw - 1300px)/2);
-        margin-bottom: $font-p-hd*2;    
+
+        @media (min-width: 1640px) and (orientation: landscape) {
+            margin: 0 calc((100vw - 1300px)/2);
+            margin-bottom: $font-p-hd*2;
         }
-        @media (max-width: 600px) and (orientation: portrait){
+
+        @media (max-width: 600px) and (orientation: portrait) {
             align-items: center;
         }
-        h2{
+
+        h2 {
             @include titleh();
         }
-        p{
+
+        p {
             @include titlep();
-                text-align: start;
-            @media (max-width: 600px) and (orientation: portrait){
-                text-align: center;
-            }
+            text-align: center;
+            max-width: unset;
+
+            @media (max-width: 600px) and (orientation: portrait) {}
         }
     }
 }
 
-.social{
-    h2{
+.social {
+    h2 {
         @include titleh();
     }
-    p{
+
+    p {
         @include titlep();
     }
 }
 
-body.dark{
-    .title, .titleCases, .social, .clients{
-        h2{
+body.dark {
+
+    .title,
+    .titleCases,
+    .social,
+    .clients {
+        h2 {
             background: linear-gradient(90deg, #FF76A8 0%, #4B2EFF 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-size:400% 400%;
+            background-size: 400% 400%;
         }
     }
 
 }
-
-

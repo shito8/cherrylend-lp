@@ -51,7 +51,8 @@ main {
     justify-content: space-between;
     margin: 0 10%;
     min-height: $height-std;
-    @media (min-width: 2000px) and (orientation: landscape){
+
+    @media (min-width: 2000px) and (orientation: landscape) {
         width: 1600px;
     }
 
@@ -61,93 +62,110 @@ main {
         flex-direction: column;
         justify-content: center;
         width: 70%;
-        @media (max-width: 1023px) and (orientation: landscape){
+
+        @media (max-width: 1023px) and (orientation: landscape) {
             width: 100%;
         }
+
         @media (max-width: 1044px) and (orientation: portrait) {
             width: 100%;
         }
-        
+
         .articleLeft div {
             display: flex;
             flex-direction: column;
             width: 100%;
         }
 
-        h2{
+        h2 {
             /*background: linear-gradient(90deg, #F9BFD8 0%, #5932C9 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-size:400% 400%;*/
-            font-weight: fonts.$font-weight-extrabold;
-            -webkit-animation:change 4s ease infinite;
-            animation:change 4s ease infinite;
+            -webkit-animation: change 4s ease infinite;
+            animation: change 4s ease infinite;
             font-size: $font-h2-std;
             line-height: $font-h2-std*1.2;
-            padding: $font-h2-std*.3 0px; 
-            @media (min-width: 1640px) and (orientation: landscape){
+            padding: $font-h2-std*.3 0px;
+
+            @media (min-width: 1640px) and (orientation: landscape) {
                 font-size: $font-h2-hd;
                 line-height: $font-h2-hd*1.2;
-                padding: $font-h2-hd*.3 0px; 
+                padding: $font-h2-hd*.3 0px;
             }
-            @media (max-width: 1023px) and (orientation: landscape) and (max-height: 600px){
+
+            @media (max-width: 1023px) and (orientation: landscape) and (max-height: 600px) {
                 font-size: $font-h2-min;
                 line-height: $font-h2-min*1.2;
                 padding: $font-h2-min*.3 0px;
             }
-            @media (max-width: 1044px) and (orientation: portrait){
+
+            @media (max-width: 1044px) and (orientation: portrait) {
                 text-align: center;
             }
-            @media (max-width: 600px) and (orientation: portrait){
+
+            @media (max-width: 600px) and (orientation: portrait) {
                 font-size: $font-h2-min;
                 line-height: $font-h2-min*1.2;
                 padding: $font-h2-min*.3 0px;
             }
         }
-        h1{
+
+        h1 {
             /*color: $primary-color;*/
             font-weight: fonts.$font-weight-bold;
             font-size: $font-h1-std;
             margin-bottom: $font-h1-std;
-            @media (min-width: 1640px) and (orientation: landscape){
+
+            @media (min-width: 1640px) and (orientation: landscape) {
                 font-size: $font-h1-hd;
                 margin-bottom: $font-h1-hd;
             }
-            @media (max-width: 1023px) and (orientation: landscape) and (max-height: 600px){
+
+            @media (max-width: 1023px) and (orientation: landscape) and (max-height: 600px) {
                 font-size: $font-h1-min;
                 margin-bottom: $font-h1-min;
             }
-            @media (max-width: 1044px) and (orientation: portrait){
+
+            @media (max-width: 1044px) and (orientation: portrait) {
                 text-align: center;
             }
-            @media (max-width: 600px) and (orientation: portrait){
+
+            @media (max-width: 600px) and (orientation: portrait) {
                 font-size: $font-h1-min;
                 margin-bottom: $font-h1-min;
             }
-            
+
         }
-        .buttons{
+
+        .buttons {
             display: flex;
             flex-wrap: nowrap;
             flex-direction: row;
             gap: $font-btn-std;
-            @media (min-width: 1640px) and (orientation: landscape){
+         @media screen and (min-width:1921px){
+            margin-top:50px;
+         }
+            @media (min-width: 1640px) and (orientation: landscape) {
                 gap: $font-btn-hd;
             }
-            @media (max-width: 1023px) and (orientation: landscape) and (max-height: 600px){
+
+            @media (max-width: 1023px) and (orientation: landscape) and (max-height: 600px) {
                 gap: $font-btn-min;
                 margin-bottom: $font-btn-min*2;
             }
-            @media (max-width: 1044px) and (orientation: portrait){
+
+            @media (max-width: 1044px) and (orientation: portrait) {
                 justify-content: center;
                 align-items: center;
             }
-            @media (max-width: 600px) and (orientation: portrait){
+
+            @media (max-width: 600px) and (orientation: portrait) {
                 flex-direction: column;
                 gap: $font-btn-min;
             }
 
-            .button{
+            .button {
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -161,25 +179,29 @@ main {
                 width: $width-btn-std;
                 height: $height-btn-std;
                 box-shadow: $box-shadow-light-std;
-                &:hover{
+
+                &:hover {
                     cursor: pointer;
                     scale: 1.1;
                 }
-                @media (min-width: 1640px) and (orientation: landscape){
+
+                @media (min-width: 1640px) and (orientation: landscape) {
                     font-size: $font-btn-hd;
                     border-radius: $border-btn-hd;
                     width: $width-btn-hd;
                     height: $height-btn-hd;
                     box-shadow: $box-shadow-light-hd;
                 }
-                @media (max-width: 1023px) and (orientation: landscape) and (max-height: 600px){
+
+                @media (max-width: 1023px) and (orientation: landscape) and (max-height: 600px) {
                     font-size: $font-btn-min;
                     border-radius: $border-btn-min;
                     width: $width-btn-min;
                     height: $height-btn-min;
                     box-shadow: $box-shadow-light-min;
                 }
-                @media (max-width: 600px) and (orientation: portrait){
+
+                @media (max-width: 600px) and (orientation: portrait) {
                     font-size: $font-btn-min;
                     border-radius: $border-btn-min;
                     width: $width-btn-min;
@@ -187,51 +209,60 @@ main {
                     box-shadow: $box-shadow-light-min;
                 }
             }
-        }        
+        }
     }
+
     .articleRight {
         display: flex;
         justify-content: center;
         align-items: center;
         height: 100%;
-        @media (max-width: 1023px) and (orientation: landscape){
-            display: none; 
+
+        @media (max-width: 1023px) and (orientation: landscape) {
+            display: none;
         }
-        @media (max-width: 1044px) and (orientation: portrait){
-            display: none; 
+
+        @media (max-width: 1044px) and (orientation: portrait) {
+            display: none;
         }
+
         img {
-           width: $width-img-main-std;
-           height: $width-img-main-std*1.07;
-           margin-bottom: $font-h1-std;
-           @media (min-width: 1640px) and (orientation: landscape){
+            width: $width-img-main-std;
+            height: $width-img-main-std*1.07;
+            margin-bottom: $font-h1-std;
+
+            @media (min-width: 1640px) and (orientation: landscape) {
                 width: $width-img-main-hd;
                 height: $width-img-main-hd*1.07;
                 margin-bottom: $font-h1-hd;
-                
+
             }
 
-        }        
+        }
     }
 }
 
-body.dark{
+body.dark {
     .articleLeft h2 {
         background: linear-gradient(90deg, #F9BFD8 0%, #5932C9 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        background-size:400% 400%;
+        background-size: 400% 400%;
+        font-weight: fonts.$font-weight-bold;
     }
-    .articleLeft h1{
+
+    .articleLeft h1 {
         background: linear-gradient(180deg, #FFFFFF 0%, #C2CAD1 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
-    .buttons{
-        .button{
+
+    .buttons {
+        .button {
             background: linear-gradient(90deg, #EAA6AB 0%, #9BB4F3 100%, #D9D9D9 100%);
             box-shadow: $box-shadow-dark-std;
-            @media (min-width: 1640px) and (orientation: landscape){
+
+            @media (min-width: 1640px) and (orientation: landscape) {
                 box-shadow: $box-shadow-dark-hd;
             }
         }

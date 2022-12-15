@@ -24,7 +24,7 @@ $transition: 0.25s;
 
 $primary-color: #000000;
 $secundary-color: #ffffff;
-$dark-color: #141B22;
+$dark-color: #090B0F;
 
 .assets{
     display: flex;
@@ -74,6 +74,7 @@ $dark-color: #141B22;
         height: $height-card-std;
         box-shadow: $box-shadow-std;
         transition: $transition;
+        padding: 40px;
         /* background: $secundary-color; */
         &:hover{
             cursor: pointer;
@@ -111,7 +112,8 @@ $dark-color: #141B22;
             box-shadow: $box-shadow-min;
         }
         img{
-            width: 95%;
+            width: 100%;
+            max-width: 250px;
         }
     }
 }

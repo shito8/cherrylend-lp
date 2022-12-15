@@ -1,5 +1,6 @@
 @use "./fontweight" as fonts;
-
+$color-light: #787D80;
+$color-lighter: #DEDEDE;
 $font-pmin-std: 0.875rem;
 $font-pmin-hd: 1rem;
 
@@ -32,7 +33,7 @@ $transition: 0.25s;
 
 $primary-color: #000000;
 $secundary-color: #ffffff;
-$dark-color: #141B22;
+$dark-color: #02080E;
 
 .groupCards {
     display: flex;
@@ -41,44 +42,49 @@ $dark-color: #141B22;
     align-items: center;
 }
 
-.gcards{
+.gcards {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     margin: 0% 5%;
-    @media (min-width: 1640px) and (orientation: landscape){
+
+    @media (min-width: 1640px) and (orientation: landscape) {
         gap: $gap-hd;
         margin-bottom: $gap-hd*2;
-    } 
-    @media (max-width: 1639px) and (orientation: landscape){
+    }
+
+    @media (max-width: 1639px) and (orientation: landscape) {
         gap: $gap-std;
         margin-bottom: $gap-std*2;
     }
-    @media (max-width: 1250px) and (orientation: landscape){
-        gap: $gap-min;
-        margin-bottom: $gap-min*2;
-    }
-    @media (max-width: 600px) and (orientation: landscape){
-        gap: $gap-min;
-        margin-bottom: $gap-min*2;
-    }
-    @media (max-width: 1200px) and (orientation: portrait) {
-        gap: $gap-min;
-        margin-bottom: $gap-min*2;
-    }
-    @media (max-width: 600px) and (orientation: portrait){
+
+    @media (max-width: 1250px) and (orientation: landscape) {
         gap: $gap-min;
         margin-bottom: $gap-min*2;
     }
 
-    .card{
+    @media (max-width: 600px) and (orientation: landscape) {
+        gap: $gap-min;
+        margin-bottom: $gap-min*2;
+    }
+
+    @media (max-width: 1200px) and (orientation: portrait) {
+        gap: $gap-min;
+        margin-bottom: $gap-min*2;
+    }
+
+    @media (max-width: 600px) and (orientation: portrait) {
+        gap: $gap-min;
+        margin-bottom: $gap-min*2;
+    }
+
+    .card {
         color: $primary-color;
         display: flex;
         flex-direction: column;
         border-radius: $border-card-std;
-        justify-content: space-around;
-        align-items:center;
+        align-items: center;
         box-shadow: $box-shadow-std;
         transition: $transition;
         background: $secundary-color;
@@ -86,28 +92,46 @@ $dark-color: #141B22;
         width: $width-card-std;
         height: $height-card-std;
         box-shadow: $box-shadow-std;
-        padding: $font-h3-std $font-h3-std;
-        &:hover{
+        padding: 70px 20px;
+
+        .dynamic-icon {
+
+            height: 180px;
+
+            svg {
+                height: 100%;
+            }
+        }
+
+        &:hover {
             scale: 1.05;
         }
-        @media (min-width: 1640px) and (orientation: landscape){
+
+        @media (min-width: 1640px) and (orientation: landscape) {
             border-radius: $border-card-hd;
             width: $width-card-hd;
             height: $height-card-hd;
             box-shadow: $box-shadow-hd;
-            padding: $font-h3-hd $font-h3-hd;
+         
         }
-        @media (max-width: 1250px) and (orientation: landscape){
+
+        @media (max-width: 1250px) and (orientation: landscape) {
             border-radius: $border-card-min;
             width: $width-card-min;
             height: $height-card-min;
             box-shadow: $box-shadow-min;
+
+            .dynamic-icon {
+                height: 100px;
+            }
         }
-        @media (max-width: 600px) and (orientation: landscape){
+
+        @media (max-width: 600px) and (orientation: landscape) {
             border-radius: $border-card-min;
             width: $width-card-min;
             height: $height-card-min;
             box-shadow: $box-shadow-min;
+
         }
 
         @media (max-width: 1200px) and (orientation: portrait) {
@@ -115,17 +139,25 @@ $dark-color: #141B22;
             width: $width-card-min;
             height: $height-card-min;
             box-shadow: $box-shadow-min;
+
+            .dynamic-icon {
+                height: 100px;
+
+            }
         }
-        @media (max-width: 600px) and (orientation: portrait){
+
+        @media (max-width: 600px) and (orientation: portrait) {
             border-radius: $border-card-min;
             width: $width-card-min;
             height: $height-card-min;
             box-shadow: $box-shadow-min;
         }
-        img{
+
+        img {
             width: $image-std;
             height: $image-std*1.07;
-            @media (min-width: 1640px) and (orientation: landscape){
+
+            @media (min-width: 1640px) and (orientation: landscape) {
                 width: $image-hd;
                 height: $image-hd;
             }
@@ -135,32 +167,44 @@ $dark-color: #141B22;
             font-size: $font-h3-std;
             font-weight: fonts.$font-weight-bold;
             text-align: center;
-            @media (min-width: 1640px) and (orientation: landscape){
+            max-width: 250px;
+
+            @media (min-width: 1640px) and (orientation: landscape) {
                 font-size: $font-h3-hd;
             }
-            
+
         }
-    
-        p{
+
+        p {
             font-weight: fonts.$font-weight-semibold;
             text-align: center;
             font-size: $font-pmin-std;
-            @media (min-width: 1640px) and (orientation: landscape){
+
+            @media (min-width: 1640px) and (orientation: landscape) {
                 font-size: $font-pmin-hd;
             }
         }
     }
 }
 
-body.dark{
+body.dark {
 
-    .card{
+    .card {
+
         background: $dark-color;
-        h3{
+
+        h3 {
+            margin-top:50px;
+            @media screen and (max-width:1640px){
+                margin-top:25px;
+            }
+            margin-bottom: 20px;
             color: $secundary-color;
         }
-        p{
-            color: $secundary-color;
+
+        p {
+            color: $color-light;
+
         }
     }
 }
